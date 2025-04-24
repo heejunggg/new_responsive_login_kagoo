@@ -5,7 +5,12 @@
   align-items: center;
 
   margin-inline: auto;
-  border: 1px solid salmon;
+  border: 1px solid var(--gray600);
+  @media (width < 885px) {
+    flex-direction: column;
+    width: 100%;
+    padding-inline: 6rem;
+  }
 
   .left-img {
     border: 1px solid green;
@@ -23,11 +28,23 @@
   .right {
     width: 45.6rem;
     margin-inline: auto;
+    @media (width < 885px) {
+      width: 100%;
+    }
 
     .input-box {
       padding-bottom: 0.6rem;
       margin-top: 3.2rem;
-      border-bottom: 1px solid red;
+      border-bottom: 1px solid var(--input-border);
+    }
+    span {
+      color: var(--primary);
+    }
+    .text-xxxl {
+      --fw: 500;
+    }
+    .checkbox {
+      margin: 3.2rem 0;
     }
 
     .text-field {
