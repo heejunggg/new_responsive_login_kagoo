@@ -42,6 +42,8 @@
     }
     .text-xxxl {
       --fw: 500;
+      font-family: 'Poppins', sans-serif;
+      font-style: normal;
     }
     .checkbox {
       margin: 3.2rem 0;
