@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <title>페이지제목</title>
+    <!-- 의미 : notiion에 나와있음 Open Graph    -->
+    <meta property="og:type" content="페이지유형" />
+    <meta property="og:site_name" content="사이트의 이름" />
+    <meta property="og:title" content="페이지 이름" />
+    <meta property="og:description" content="페이지 설명" />
+    <meta property="og:image" content="페이지 대표이미지" />
+    <meta property="og:url" content="페이지 주소" />
+    <style>
+      /* @layer 레이어명, 레이어명, 레이어명;
+               제일작음  >>> 제일 큼큼 */
+
+      @layer Reset, Block, Utillity.Colors, Utillity.Spacing, name;
+      /* 외부시스템인 siwper, bootstrap,은 어떻게할껀데데?? */
+      /* @import url(./css/reset.css) layer(작명); */
+      @import url(./css/reset.css) layer(Reset.ResetBasic);
+
+      /* 한번layer시작하면 계쏙 써야함 */
+      @layer Reset {
+        * {
+          margin: 0;
+          padding: 0;
+        }
+      }
+
+      /* @layer Utillity {
+         .mt20 {
+           margin-top: 20px;
+         }
+         .text-primary {
+           color: orange;
+         }
+       } */
+      /* layer  안에 layer 둘수있음 */
+      @layer Utillity {
+        @layer Spacing {
+          .mt20 {
+            margin-top: 20px;
+          }
+          #a {
+            background-color: gray;
+          }
+        }
+      }
+
+      @layer Block {
+        .block {
+          border: 2px solid red;
+          padding: 10px;
+          margin-top: 5px;
+        }
+      }
+
+      @layer name {
+        :is(div, p, .block, #a) {
+          background-color: greenyellow;
+        }
+      }
+
+      /* .mt20 {
+         margin-top: 20px;
+       }
+       .block {
+         border: 2px solid red;
+         padding: 10px;
+         margin-top: 5px;
+       } */
+
+      /* :is(div, p) {
+         background-color: orange;
+       }
+
+       가장높은점수를 따라간다.
+       */
+      /* :is(div, p, .block)  {
+         background-color: orange;
+       } */
+      /* id는 100점이므로 개발자소스에서 100으로 나온다. */
+
+      /* :is(div, p, .block, #a) {
+        background-color: yellow;
+      } */
+
+      /* where는 무엇이 들어갔떤 0점이다.-개발자소스에서 확인하기기. */
+      /* :where(div, p, .block, #a) {
+        background-color: green;
+      } */
+
+      /* :where(div, p) {
+        background-color: orange;
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="block" id="a">text</div>
+    <p class="block mt20">text</p>
+  </body>
+</html>

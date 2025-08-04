@@ -1,0 +1,16 @@
+.tel {
+  display: flex;
+  gap: 0.8rem;
+  > * {
+    /* 모든자식을 n분의1로 가지게 flex:1로 */
+    flex: 1;
+  }
+}
+.address {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  gap: 0.4rem 1rem;
+  input[type='text'] {
+    grid-column: 1 / -1;
+  }
+}

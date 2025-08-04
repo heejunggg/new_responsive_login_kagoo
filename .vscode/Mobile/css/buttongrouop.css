@@ -1,0 +1,21 @@
+.btn-group {
+  /* q버튼그룹을 만든다. 버튼을 고정시키는 거 하나 만들고  */
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 0.4rem;
+}
+
+.fixed {
+  position: fixed;
+
+  inset: auto 0 0;
+  /* 임의로 통일일 */
+  padding: 2rem 1.5rem 2.4rem;
+  background-color: var(--white);
+}
+
+/* footer가 없는 없으면 패딩아래를를 50px만큼 띄운다, 일떄는 js할필요없이
+body:has(:not(.footer)){
+    padding-bottom: 50px;
+}
+*/

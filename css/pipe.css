@@ -1,24 +1,52 @@
 .pipe-type1 {
-  --width: 1px;
-  --height: 10px;
+  --width: 0.1rem;
   --marginX: 1rem;
-  --bg: var(--gray600);
 }
-
 [class*='pipe-'] {
   display: inline-flex;
   align-items: center;
+  /* background: lavenderblush; */
   > * {
-    display: flex;
+    /* 이클래스가 있는 모든 자식들은. before때문에*/
+    display: Flex;
     align-items: center;
     + * {
       &::before {
         content: '';
         width: var(--width);
-        height: var(--height);
+        height: 1rem;
         margin-inline: var(--marginX);
-        background: var(--bg);
+        background: var(--gray700);
       }
     }
   }
 }
+
+/* 아래처럼 풀어쓸수있다. */
+/* 
+
+.pipe-type1 {
+  --width: 0.1rem;
+  --marginX: 1rem;
+}
+[class*='pipe-'] {
+  display: flex;
+  align-items: center;
+  background: lavenderblush;
+}
+[class*='pipe-'] > * {
+  // flex를 주는 이유는 ::before로 만든 세로 구분선 "수직 가운데 정렬" 
+  display: Flex;
+  align-items: center;
+}
+  [class*='pipe-'] > * + * ::befone {
+    content: '';
+    width: var(--width);
+    height: 1rem;
+    margin-inline: var(--marginX);
+    background: var(--gray700);
+    }
+  }
+}
+
+*/

@@ -1,3 +1,4 @@
+/* 파일로드(@import)한것 끼리 우선순위를 정하기 위해서 layer로 이름을 다시 정함 */
 @layer reset, print, atom, molecules, organisms, template, page, utillity;
 
 /* 기초정의 */
@@ -12,8 +13,9 @@
 @import url(./typography.css) layer(atom.typography);
 
 /* 분자 */
-@import url(./button.css) layer(atom.button);
 @import url(./badge.css) layer(atom.badge);
+@import url(./button.css) layer(atom.button);
+@import url(./tabs.css) layer(atom.button);
 @import url(./textfield.css) layer(molecules.textfield);
 @import url(./radio.css) layer(molecules.radio);
 @import url(./checkbox.css) layer(molecules.checkbox);
@@ -26,7 +28,11 @@
 
 /* 유기체 */
 @import url(./table.css) layer(organisms.table);
+@import url(./header.css) layer(organisms.header);
+@import url(./footer.css) layer(organisms.footer);
+@import url(./button-group.css) layer(organisms.button-group);
 
 /* 템플릿 */
 /* 페이지 */
-@import url(./login.css) layer(organisms.login);
+/* @import url(./login.css) layer(organisms.login); */
+@import url(./login.css) layer(page.login);

@@ -1,0 +1,56 @@
+.pipe-type1 {
+  --width: 0.1rem;
+  --height: 1.4rem;
+  --marginX: 1.2rem;
+  --bg: var(--white);
+
+  /* 두개의 텍스트간의 flex */
+  display: inline-flex;
+  align-items: center;
+  /* 모든자식은  flex */
+  > * {
+    display: flex;
+    align-items: center;
+    /*  + 는 첫번째 선택자는 제외 인접선택자(첫번째빼고 다) first는 제외된다, ~물결도 있다.  */
+    + * {
+      &::before {
+        content: '';
+        width: var(--width);
+        height: var(--height);
+        margin-inline: var(--marginX);
+        background: var(--bg);
+      }
+    }
+  }
+}
+.pipe-type2 {
+  --width: 0.6rem;
+  --height: 1.1rem;
+  --marginX: 0.8rem;
+  --bg: url(../images/ico-pipe2.svg) no-repeat center / contain;
+
+  /* 두개의 텍스트간의 flex */
+  display: inline-flex;
+  align-items: center;
+  font-size: inherit;
+  color: inherit;
+  /* 모든자식은  flex */
+  > * {
+    display: flex;
+    align-items: center;
+    /*  + 는 첫번째 선택자는 제외 인접선택자(첫번째빼고 다) first는 제외된다, ~물결도 있다.  */
+    /* font사이즈가 계쏙 커지고 잇다 부모로 상속속 */
+    /* 바로 부모에게 상속 td의 크기대로 가기위해 */
+    font-size: inherit;
+    color: inherit;
+    + * {
+      &::before {
+        content: '';
+        width: var(--width);
+        height: var(--height);
+        margin-inline: var(--marginX);
+        background: var(--bg);
+      }
+    }
+  }
+}

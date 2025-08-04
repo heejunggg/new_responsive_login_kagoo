@@ -1,0 +1,37 @@
+.header {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 5rem 1fr 5rem;
+  padding-inline: 2rem;
+  height: 4.4rem;
+  border-bottom: 0.1rem solid var(--primary);
+
+  .icon-button {
+    /* 얍샵이는 --width로 정의함 */
+    --icon-size: 1.6rem;
+  }
+  h1 {
+    justify-self: center;
+  }
+
+  &.primary {
+    background: var(--primary);
+    h1 {
+      color: var(--white);
+    }
+  }
+  /* 버튼2개를 옆으로 */
+  > div {
+    /* header의 자식 div모두 */
+    /* gap 아이콘사이 */
+    display: flex;
+    gap: 1.6rem;
+    /* 첫번째 div */
+    &:first-child {
+      justify-self: start;
+    }
+    &:last-child {
+      justify-self: end;
+    }
+  }
+}

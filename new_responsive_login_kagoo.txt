@@ -1,0 +1,2 @@
+new_responsive_login_kagoo
+이폴더에서 만들어서 구성리스에 더 추가하자.

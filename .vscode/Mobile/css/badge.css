@@ -1,0 +1,79 @@
+.badge,
+.badge.dark {
+  /* 리베하얀 반응형웹 실무
+  --paddingX: 0.6rem;
+  --paddingY: 0.6rem;
+  --fontSize: 1rem;  
+  --radius: 0.8rem; 
+  */
+  --paddingX: 1.6rem;
+  --paddingY: 0.8rem;
+  --fontSize: 1.6rem;
+  --radius: 0.8rem;
+
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  text-align: center;
+  justify-content: center;
+  padding-inline: var(--paddingX);
+  padding-block: var(--paddingY);
+  font-size: var(--fontSize, var(--font-base));
+  border-radius: var(--radius);
+
+  /* -------------------------------------------------------------------------- */
+  /*                                    색상정의                                  */
+  /* -------------------------------------------------------------------------- */
+  &.mint {
+    color: var(--white);
+    background-color: var(--blue300);
+  }
+  &.orange {
+    color: var(--white);
+    background-color: var(--red300);
+  }
+
+  &.green {
+    color: var(--white);
+    background-color: var(--green300);
+  }
+  &.gray {
+    color: var(--white);
+    background-color: var(--gray400);
+  }
+  &.black {
+    color: var(--white);
+    background-color: var(--black60);
+  }
+  /* 3.29 */
+  &.white-outline {
+    color: var(--gray800);
+    background-color: var(--gray50);
+    border: 1px solid var(--gray300);
+    border-radius: 10rem;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    기타정의                                    */
+/* -------------------------------------------------------------------------- */
+.hit-view {
+  background: url(../images/icon_hit.svg) no-repeat left;
+  padding-left: 3.2rem;
+  height: 2.4rem;
+  font-size: 1.1rem;
+  color: var(--gray800);
+  letter-spacing: -0.05rem;
+  line-height: 1;
+  align-content: center;
+}
+.comment-view {
+  background: url(../images/ico_comment.svg) no-repeat left;
+  height: 2.4rem;
+  padding-left: 3.2rem;
+  font-size: 1.1rem;
+  color: var(--gray800);
+  letter-spacing: -0.05rem;
+  line-height: 1;
+  align-content: center;
+}

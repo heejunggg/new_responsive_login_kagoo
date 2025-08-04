@@ -1,0 +1,33 @@
+.header {
+  display: grid;
+  grid-template-columns: 5rem 1fr 5rem;
+  padding-inline: 2rem;
+  height: 4.4rem;
+  align-items: center;
+  border-bottom: 0.1rem solid var(--primary);
+
+  .icon-button {
+    --width: 1.6rem;
+  }
+  h1 {
+    justify-self: center;
+  }
+  > div {
+    /* header의 자식 div모두 */
+    /* gap 아이콘사이 */
+    display: flex;
+    gap: 1.6rem;
+    &:first-child {
+      justify-self: start;
+    }
+    &:last-child {
+      justify-self: end;
+    }
+  }
+  &.primary {
+    background-color: var(--primary);
+    h1 {
+      color: var(--white);
+    }
+  }
+}

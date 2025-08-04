@@ -1,0 +1,11 @@
+.footer {
+  display: Grid;
+  text-align: center;
+  gap: 1.66rem;
+  padding-block: var(--pl, 3.3rem);
+  color: #fff;
+  background: var(--gray600);
+  .pipe-type1 {
+    justify-self: center;
+  }
+}

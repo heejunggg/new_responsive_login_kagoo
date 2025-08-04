@@ -1,7 +1,7 @@
 .badge {
   --paddingX: 1rem;
   --paddingY: 1rem;
-  --fontSize: 1.2rem;
+  --fontSize: 1.6rem;
   --radius: 1rem;
 
   display: inline-flex;
@@ -17,12 +17,27 @@
   /* -------------------------------------------------------------------------- */
   /*                                    색상정의                                  */
   /* -------------------------------------------------------------------------- */
-  &.blue {
+  &.mint {
     color: var(--white);
-    background-color: var(--blue600);
+    background-color: var(--blue450);
   }
   &.orange {
     color: var(--white);
-    background-color: var(--red500);
+    background-color: var(--red450);
+  }
+  &.green {
+    color: var(--white);
+    background-color: var(--green450);
+  }
+  &.gray {
+    color: var(--white);
+    background-color: var(--gray550);
+  }
+  &.white-outline {
+    --radius: 8rem;
+
+    color: var(--gray800);
+    border: 1px solid var(--gray150);
+    background-color: var(--gray50);
   }
 }

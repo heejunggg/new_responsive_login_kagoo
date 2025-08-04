@@ -4,14 +4,48 @@
   box-sizing: border-box;
   text-align: center;
   justify-content: center;
+  border-radius: var(--radius, 0.8rem);
 
   /* -------------------------------------------------------------------------- */
   /*                                    크기정의                                  */
   /* -------------------------------------------------------------------------- */
-  /* show more */
+  /* 버튼의 크기는 높이로 정해진다. 
+    base를 먼저 정하고 작은거 큰거 정한다.
+  */
+
+  &.xxs {
+    --px: 0.8rem;
+    --py: 1rem;
+
+    padding-inline: var(--px);
+    padding-block: var(--py);
+    font-size: var(--fs, var(--font-base));
+  }
+  /* 검색필터 */
+  &.xs {
+    --px: 1.2rem;
+    --py: 0.9rem;
+
+    padding-inline: var(--px);
+    padding-block: var(--py);
+    font-size: var(--fs, var(--font-base));
+  }
+  /* 등록, */
+  &.sm {
+    --px: 2.4rem;
+    --py: 1rem;
+    --fs: 1.4rem;
+
+    padding-inline: var(--px);
+    padding-block: var(--py);
+    font-size: var(--fs, var(--font-size));
+  }
+
   &.base {
-    --px: 4rem;
-    --py: 0.6rem;
+    --px: 2rem;
+    --py: 1.2rem;
+    --fs: 1.6rem;
+    /* --fs:1.2rem; */
 
     padding-inline: var(--px);
     padding-block: var(--py);
@@ -21,7 +55,8 @@
   /* 아직미정 */
   &.md {
     --px: 4rem;
-    --py: 0.6rem;
+    --py: 2rem;
+    --fs: 1.6rem;
 
     padding-inline: var(--px);
     padding-block: var(--py);
@@ -45,59 +80,107 @@
     background-color: var(--primary);
   }
   &.secondary {
-    color: var(----gray500);
+    color: var(--gray900);
     background-color: var(--white);
     border: 1px solid var(--gray500);
   }
   &.darkgray {
-    color: var(--white);
-    background-color: var(--neutral-07-100);
+    /* --color: #4b4b4b; */
+    --color: white;
+
+    color: var(--color, var(--white));
+    background-color: var(--gray700);
     border: 1px solid var(--gray500);
   }
-  &:disabled {
+
+  &.gray-outline {
+    color: var(--gray500);
+    background-color: var(--white);
+    border: 1px solid var(--gray300);
+  }
+  /* 우편번호 찾기 */
+  &.light-gray-outline {
+    color: var(--gray500);
+    background-color: var(--gray100);
+    border: 1px solid var(--gray500);
+  }
+  &.disabled {
     opacity: 0.2;
   }
 
   /* -------------------------------------------------------------------------- */
-  /*                                    아이콘정의                                */
+  /*                                    아이콘정의 (text와 icon)                               */
   /* -------------------------------------------------------------------------- */
   &[class*='ico'] {
+    gap: 1rem;
+    /* btn.ico::after */
     &::after {
       content: '';
       width: var(--width);
       aspect-ratio: 1;
       background: var(--bg) no-repeat center / contain;
+      align-self: flex-end;
     }
   }
+  /* white */
   &.ico1 {
-    --width: 2rem;
-    --bg: url('../images/ico1.svg');
+    --width: 1.6rem;
+    --bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 16 16' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4 2C3.44772 2 3 2.44772 3 3V10.1707C3.31278 10.0602 3.64936 10 4 10H13V2H4ZM15 1C15 0.447715 14.5523 0 14 0H4C2.34315 0 1 1.34315 1 3V13C1 14.6569 2.34315 16 4 16H14C14.5523 16 15 15.5523 15 15V1ZM3 13C3 13.5523 3.44772 14 4 14H13V12H4C3.44772 12 3 12.4477 3 13ZM5 5C5 4.44772 5.44772 4 6 4H10C10.5523 4 11 4.44772 11 5C11 5.55228 10.5523 6 10 6H6C5.44772 6 5 5.55228 5 5Z' fill='%23ffffff'/%3E%3C/svg%3E");
   }
+  /* black */
   &.ico2 {
-    --width: 2rem;
-    --bg: url('../images/ico2.svg');
+    --width: 1.6rem;
+    --bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 16 16' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4 2C3.44772 2 3 2.44772 3 3V10.1707C3.31278 10.0602 3.64936 10 4 10H13V2H4ZM15 1C15 0.447715 14.5523 0 14 0H4C2.34315 0 1 1.34315 1 3V13C1 14.6569 2.34315 16 4 16H14C14.5523 16 15 15.5523 15 15V1ZM3 13C3 13.5523 3.44772 14 4 14H13V12H4C3.44772 12 3 12.4477 3 13ZM5 5C5 4.44772 5.44772 4 6 4H10C10.5523 4 11 4.44772 11 5C11 5.55228 10.5523 6 10 6H6C5.44772 6 5 5.55228 5 5Z' fill='%23000000'/%3E%3C/svg%3E");
+  }
+  &.ico3 {
+    --width: 1.6rem;
+    --bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 17 16' fill='none'%3E%3Cpath d='M1.5 14C1.5 13.4477 1.94772 13 2.5 13H7.5C8.05228 13 8.5 13.4477 8.5 14C8.5 14.5523 8.05228 15 7.5 15H2.5C1.94772 15 1.5 14.5523 1.5 14Z' fill='%23212121'/%3E%3Cpath d='M1.5 2C1.5 1.44772 1.94772 1 2.5 1H14.5C15.0523 1 15.5 1.44772 15.5 2C15.5 2.55228 15.0523 3 14.5 3H2.5C1.94772 3 1.5 2.55228 1.5 2Z' fill='%23212121'/%3E%3Cpath d='M1.5 8C1.5 7.44772 1.94772 7 2.5 7H14.5C15.0523 7 15.5 7.44772 15.5 8C15.5 8.55228 15.0523 9 14.5 9H2.5C1.94772 9 1.5 8.55228 1.5 8Z' fill='%23212121'/%3E%3C/svg%3E");
+  }
+  &.ico4 {
+    --width: 1.6rem;
+    --bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='14' viewBox='0 0 16 14' fill='none'%3E%3Cpath d='M1 0C0.447715 0 0 0.447715 0 1C0 1.55228 0.447716 2 1 2H13C13.5523 2 14 1.55228 14 1C14 0.447715 13.5523 0 13 0H1Z' fill='%23212121'/%3E%3Cpath d='M1 6C0.447715 6 0 6.44772 0 7C0 7.55228 0.447715 8 1 8H6C6.55228 8 7 7.55228 7 7C7 6.44772 6.55228 6 6 6H1Z' fill='%23212121'/%3E%3Cpath d='M12 6C12.5523 6 13 6.44772 13 7V13C13 13.5523 12.5523 14 12 14C11.4477 14 11 13.5523 11 13V7C11 6.44772 11.4477 6 12 6Z' fill='%23212121'/%3E%3Cpath d='M1 12C0.447715 12 0 12.4477 0 13C0 13.5523 0.447715 14 1 14H4C4.55228 14 5 13.5523 5 13C5 12.4477 4.55228 12 4 12H1Z' fill='%23212121'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.29289 9.29289C8.68342 8.90237 9.31658 8.90237 9.70711 9.29289L12 11.5858L14.2929 9.29289C14.6834 8.90237 15.3166 8.90237 15.7071 9.29289C16.0976 9.68342 16.0976 10.3166 15.7071 10.7071L12.7071 13.7071C12.3166 14.0976 11.6834 14.0976 11.2929 13.7071L8.29289 10.7071C7.90237 10.3166 7.90237 9.68342 8.29289 9.29289Z' fill='%23212121'/%3E%3C/svg%3E");
+  }
+
+  &.ico5 {
+    --width: 1.6rem;
+    --bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cg clip-path='url(%23clip0_1044_71198)'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.2929 0.292893C11.6834 -0.0976311 12.3166 -0.0976311 12.7071 0.292893L15.7071 3.29289C16.0977 3.68342 16.0977 4.31658 15.7071 4.70711L5.70713 14.7071C5.57897 14.8353 5.41839 14.9262 5.24256 14.9701L1.24256 15.9701C0.901782 16.0553 0.541295 15.9555 0.292914 15.7071C0.0445341 15.4587 -0.055315 15.0982 0.0298787 14.7575L1.02988 10.7575C1.07384 10.5816 1.16476 10.4211 1.29291 10.2929L11.2929 0.292893ZM2.90299 11.5112L2.37439 13.6256L4.48877 13.097L10.5858 7.00001L9.00001 5.41422L2.90299 11.5112ZM13.5858 4L12 5.5858L10.4142 4.00001L12 2.41421L13.5858 4ZM9 14C8.44771 14 8 14.4477 8 15C8 15.5523 8.44771 16 9 16H15C15.5523 16 16 15.5523 16 15C16 14.4477 15.5523 14 15 14H9Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1044_71198'%3E%3Crect width='16' height='16' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+  }
+  &.ico6 {
+    --width: 1.6rem;
+    --bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='12' viewBox='0 0 13 12' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.57189 5.32696C8.57189 7.14174 7.10072 8.61291 5.28595 8.61291C3.47117 8.61291 2 7.14174 2 5.32696C2 3.51218 3.47117 2.04102 5.28595 2.04102C7.10072 2.04102 8.57189 3.51218 8.57189 5.32696ZM8.75223 9.31782C7.82423 10.1245 6.61212 10.6129 5.28595 10.6129C2.3666 10.6129 0 8.24631 0 5.32696C0 2.40761 2.3666 0.0410156 5.28595 0.0410156C8.20529 0.0410156 10.5719 2.40761 10.5719 5.32696C10.5719 6.25647 10.332 7.12995 9.91069 7.88884C10.0693 7.93385 10.219 8.0188 10.3439 8.14367L12.4536 10.2534C12.8441 10.6439 12.8441 11.2771 12.4536 11.6676C12.0631 12.0582 11.4299 12.0582 11.0394 11.6676L8.92966 9.55788C8.85699 9.48522 8.79785 9.40415 8.75223 9.31782Z' fill='%23FAFAFA'/%3E%3C/svg%3E");
   }
 }
 
 /* -------------------------------------------------------------------------- */
-/*                                    아이콘전용                                */
+/*                                    아이콘전용  - 아이콘 이미지                              */
 /* -------------------------------------------------------------------------- */
-.ico-button {
-  --size: var(--icon-size, 3rem);
+/* 돋보기..등. */
+.icon-button {
+  /* 아이콘 너비 - 얍삽이랑할때는 --width로 했음*/
+  --icon-size: 4rem;
   --rounded: 0;
 
+  /* 아이콘이미지 */
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: var(--size);
+  /* width: var(--size); */
+  width: var(--icon-size);
   aspect-ratio: 1;
   border-radius: var(--rounded, 0);
   background-color: transparent;
+  /* 하얀색은 안보여서 bg를 둠 */
+  /* background-color: var(--gray600); */
   cursor: pointer;
   position: relative;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
   /* 아이콘 유효성 검사 */
-  &:has(svg:not(svg[aria-hidden='true'])) {
+  /* &:has(svg:not(svg[aria-hidden='true'])) {
     &::after {
       content: 'svg에 aria-hidden을 정의하세요';
       position: absolute;
@@ -120,7 +203,7 @@
       color: red;
       background-color: var(--white);
     }
-  }
+  } */
 
   /* 아이콘 크기 정의 */
   &.xs {

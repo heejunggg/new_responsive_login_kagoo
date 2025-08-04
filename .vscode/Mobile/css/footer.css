@@ -1,0 +1,16 @@
+.footer {
+  /* flex를 하면 번거로운 이유.. */
+  display: grid;
+  gap: 1.66rem;
+  padding-block: 3.3rem;
+  border-top: 0.2rem solid var(--primary);
+  background-color: var(--gray600);
+  font-style: 1.1rem;
+  color: var(--white);
+  text-align: center;
+
+  .pipe-type1 {
+    /* grid는 cell단위이기떄문에 개인정보와 교육담당간의 중앙으로 하기위애 */
+    justify-self: center;
+  }
+}

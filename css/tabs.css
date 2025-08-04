@@ -1,0 +1,20 @@
+.tab-type1 {
+  display: flex;
+  > li {
+    flex: 1;
+  }
+
+  /* button이 li의 100%가 되어야한다. */
+  button {
+    width: 100%;
+    font-size: 1.4rem;
+    padding-block: 1.6rem;
+    border-bottom: 0.2rem solid var(--gray200);
+  }
+  .active {
+    button {
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+  }
+}

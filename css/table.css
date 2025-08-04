@@ -5,8 +5,18 @@
   }
 }
 .table-type2 {
+  border-top: 1px solid var(--gray150);
   th,
   td {
-    border: 1px solid var(--gray400);
+    font-size: 1.4rem;
+    padding-block: 1.4rem;
+    text-align: left;
+    border-bottom: 1px solid var(--gray150);
+  }
+  th {
+    color: var(--gray950);
+  }
+  td {
+    color: var(--gray850);
   }
 }
